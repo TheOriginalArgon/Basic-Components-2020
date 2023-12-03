@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<!-- Machinery drops more components, but basic -->
+<Operation Class="PatchOperationReplace">
+	<xpath>/Defs/ThingDef [defName="MineableComponentsIndustrial"]/building/mineableThing</xpath>
+	<value>
+		<mineableThing>BC_ComponentBasic</mineableThing>
+	</value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+	<xpath>/Defs/ThingDef [defName="MineableComponentsIndustrial"]/building/mineableYield</xpath>
+	<value>
+		<mineableYield>4</mineableYield>
+	</value>
+</Operation>
+
+<!-- Change the name of components -->
+<Operation Class="PatchOperationReplace">
+	<xpath>/Defs/ThingDef [defName="ComponentIndustrial"]/label</xpath>
+	<value>
+		<label>industrial component</label>
+	</value>
+</Operation>
+<Operation Class="PatchOperationReplace">
+	<xpath>/Defs/RecipeDef [defName="Make_ComponentIndustrial"]/label</xpath>
+	<value>
+		<label>make industrial component</label>
+	</value>
+</Operation>
+
+</Patch>

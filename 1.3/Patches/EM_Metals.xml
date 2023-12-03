@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Expanded Materials - Metals</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		<!-- Change Basic Components Recipe -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/RecipeDef [defName = "BC_Make_ComponentBasic"]/ingredients</xpath>
+			<value>
+				<ingredients>
+				<li>
+				<filter>
+				  <thingDefs>
+					<li>Steel</li>
+				  </thingDefs>
+				</filter>
+				<count>3</count>
+			  </li>
+			  <li>
+				<filter>
+				  <thingDefs>
+					<li>VMEu_Iron</li>
+				  </thingDefs>
+				</filter>
+				<count>4</count>
+			  </li>
+			  </ingredients>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/RecipeDef [defName = "BC_Make_ComponentBasic"]/fixedIngredientFilter</xpath>
+			<value>
+				<fixedIngredientFilter>
+				  <thingDefs>
+					<li>Steel</li>
+					<li>VMEu_Iron</li>
+				  </thingDefs>
+				</fixedIngredientFilter>
+			</value>
+		</li>
+		<!-- Change Recipe for Basic to Industrial -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/RecipeDef [defName = "BC_Make_ComponentIndustrial_FromBasic"]/ingredients</xpath>
+			<value>
+				<ingredients>
+				<li>
+				<filter>
+				  <thingDefs>
+					<li>BC_ComponentBasic</li>
+				  </thingDefs>
+				</filter>
+				<count>1</count>
+			  </li>
+			  <li>
+				<filter>
+				  <thingDefs>
+					<li>VMEu_Copper</li>
+				  </thingDefs>
+				</filter>
+				<count>0.2</count>
+			  </li>
+			  <li>
+				<filter>
+				  <thingDefs>
+					<li>VMEu_Germanium</li>
+				  </thingDefs>
+				</filter>
+				<count>0.2</count>
+			  </li>
+			  </ingredients>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/RecipeDef [defName = "BC_Make_ComponentIndustrial_FromBasic"]/fixedIngredientFilter</xpath>
+			<value>
+				<fixedIngredientFilter>
+				  <thingDefs>
+					<li>BC_ComponentBasic</li>
+					<li>VMEu_Copper</li>
+					<li>VMEu_Germanium</li>
+				  </thingDefs>
+				</fixedIngredientFilter>
+			</value>
+		</li>
+		
+		<!-- Add Bronze Recipe -->
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs</xpath>
+			<value>
+				  <!-- Bronze Alternative -->
+				  <RecipeDef>
+					<defName>BC_Make_ComponentBasicBronze</defName>
+					<label>make basic component with bronze</label>
+					<description>Make a basic component.</description>
+					<jobString>Making basic component.</jobString>
+					<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+					<effectWorking>Cook</effectWorking>
+					<soundWorking>Recipe_Machining</soundWorking>
+					<workAmount>2300</workAmount>
+					<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+					<recipeUsers>
+						<li>FueledSmithy</li>
+						<li>ElectricSmithy</li>
+					</recipeUsers>
+					<ingredients>
+					  <li>
+						<filter>
+						  <thingDefs>
+							<li>Steel</li>
+						  </thingDefs>
+						</filter>
+						<count>3</count>
+					  </li>
+					  <li>
+						<filter>
+						  <thingDefs>
+							<li>VMEu_Bronze</li>
+						  </thingDefs>
+						</filter>
+						<count>5</count>
+					  </li>
+					</ingredients>
+					<fixedIngredientFilter>
+					  <thingDefs>
+						<li>Steel</li>
+						<li>VMEu_Bronze</li>
+					  </thingDefs>
+					</fixedIngredientFilter>
+					<products>
+					  <BC_ComponentBasic>1</BC_ComponentBasic>
+					</products>
+					<skillRequirements>
+					  <Crafting>4</Crafting>
+					</skillRequirements>
+					<workSkill>Crafting</workSkill>
+				  </RecipeDef>
+			</value>
+		</li>
+		</operations>
+	</match>
+</Operation>
+
+</Patch>

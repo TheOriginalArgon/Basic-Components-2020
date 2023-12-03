@@ -1,0 +1,30 @@
+<Defs>
+
+
+<BasicComps.DefaultSettingsDef>
+    <DefaultDefs>
+        
+        <!-- Vanilla -->
+        <li>Gun_Revolver</li>
+        <li>Gun_BoltActionRifle</li>
+        <li>Gun_PumpShotgun</li>
+
+        <!-- Vanilla Factions Expanded - Medieval -->
+        <li>VFEM_Bow_HeavyCrossbow</li>
+
+        <!-- Vanilla Weapons Expanded -->
+        <li>VWE_Bow_Crossbow</li>
+        <li>VWE_Gun_Musket</li>
+        <li>VWE_Gun_Flintlock</li>
+        <li>VWE_Bow_Compound</li>
+        <li>VWE_Gun_HandCannon</li>
+        <li>VWE_SawedOffShotgun</li>
+        <li>VWE_Gun_FireExtinguisher</li>
+        <li>VWE_Gun_SemiAutomaticRifle</li>
+        <li>VWE_Gun_LeverActionRifle</li>
+
+    </DefaultDefs>
+</BasicComps.DefaultSettingsDef>
+
+
+</Defs>

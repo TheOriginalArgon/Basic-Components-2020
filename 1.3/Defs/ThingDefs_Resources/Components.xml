@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Basic Components -->
+<ThingDef ParentName="ResourceBase">
+    <defName>BC_ComponentBasic</defName>
+    <label>basic component</label>
+    <description>Miscellaneous metal pieces, gears, screws, wires and other small mechanic pieces designed for crafting simple non-electronic devices or weapons. Can be combined with other ingredients to improve them into industrial components.</description>
+    <graphicData>
+      <texPath>Things/Items/BC_ComponentBasic</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>16</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+</Defs>
